@@ -11,9 +11,8 @@ Describe the system as the code actually builds it.
 
 **Data model.** What is a booking, in the code? What types hold it, and what has to stay
 in agreement for a booking to make sense?
-- InMemoryStore.java line 28
-- A booking is represented by a long[] containing its start and end times. The room and date are stored together as the key in
-slotsByRoomDate, while the user is stored separately in bookerBySlot. These structures must stay synchronized: the interval must exist in both maps with the correct room, date, times, and user.
+- InMemoryStore.java line 16
+- A booking is represented by an array containing a room, date, start/end time, and user, represented by string, string, long, long, string, respectively. The room and date are stored together as the key in slotsByRoomDate, while the user is stored separately in bookerBySlot. These structures must stay synchronized: the booking must exist in both maps with the correct room, date, times, and user.
 
 
 **Operations.** What can a caller do, and what goes in and out?
